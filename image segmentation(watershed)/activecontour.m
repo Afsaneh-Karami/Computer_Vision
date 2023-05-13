@@ -15,7 +15,7 @@ for i=1:16
     mask(10:end-10,10:end-10)=255;
     plant_segment = activecontour(gray_img,mask,150);
     plant_segment =bwareaopen(plant_segment ,60);
-    ImageFolder='D:\semester B\computer vision\assessement\task 1\plant_segment\';
+    ImageFolder='\image segmentation(watershed)\plant_segment\';
     imwrite(plant_segment,[ImageFolder,file_name,'_plant_seg_active.png'])
     Bw_g_truth=g_truth>0;
     bw=createMask(img);
