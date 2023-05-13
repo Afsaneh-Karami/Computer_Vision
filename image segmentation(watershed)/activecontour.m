@@ -35,16 +35,4 @@ legend('acti', 'mask','Location','bestoutside')
 disp(['average of dice for active contour methos is: ',num2str(mean_sim1)])
 disp(['average of dice for mask methos is: ',num2str(mean_sim2)])
 
-% img11=imread("D:\semester B\computer vision\assessement\task 1\plant002_rgb.png")
-% figure,
-% subplot(1,3,1)
-% imshow(img11)
-% title('origional');
-% img12=imread("D:\semester B\computer vision\assessement\task 1\plant_segment\plant002_plant_seg_active.png")
-% subplot(1,3,2)
-% imshow(img12)
-% title('active');
-% img13=imread("D:\semester B\computer vision\assessement\task 1\plant_segment\plant002_plant_seg_mask.png")
-% subplot(1,3,3)
-% imshow(img13)
-% title('mask');
+
