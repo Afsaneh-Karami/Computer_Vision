@@ -42,7 +42,7 @@ for i=1:16
     imshow(rgb)
     title(['num of leaves:',num2str(max(max(L1)))])
     leaf_count(i)=(max(max(L1)));
-    filename = fullfile('D:\semester B\computer vision\assessement\task 1\leaf_segmentation\', [file_name,'_leafseg.png']);
+    filename = fullfile('\leaf_segmentation\', [file_name,'_leafseg.png']);
     saveas(gcf, filename, 'png');
 end
 Leaf_real_number = xlsread( 'Leaf_counts.csv', 'B:B' );
