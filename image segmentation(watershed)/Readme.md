@@ -12,42 +12,27 @@ Several conventional computer vision techniques are used to segment objects from
 Active-contour (GOTO [Active-contour program](https://github.com/Afsaneh-Karami/Computer_Vision/blob/main/image%20segmentation(watershed)/activecontour.m))<br />
  A mask that encloses the object (plant) is selected. Then, the algorithm iteratively deforms the contour to align with the object’s edges based on minimising the energy function. The image, mask, and number of iterations are given as inputs. The energy function has two internal and external components that control how the contour matches the object’s boundaries. The internal energy consists of the continuity of the contour (first-order gradian) and the contour smoothness (second-order gradian) to control the deformations made to the contour. The external energy term controls the contour’s fitting towards the object’s boundaries.<br />
 The Dice coefficient was used to compare the results of different segmentation methods. It measures the overlap or similarity between binary ground truth images and binary segmented images. In the formula, the number of common pixels of two images is multiplied by two and divided by the total number of pixels of two images. The result of the Dice coefficient is in the following image. The best result was for the mask method. The mask gives better results than the active contour because the active contour matches with the outer boundary of the object and gets stuck in local minima. If there is a place between two leaves that belong to the background because it is inside the outer boundary, the active contour method can not reach that place and detect them as plants in segmentation. Samples of it are plants 3 and 5. The mask is robust to intensity variations. The lowest Dice coefficient belongs to image eight because of its low resolution (smallest image). The result of segmentation is in the folder plant_segment(GOTO [floder](https://github.com/Afsaneh-Karami/Computer_Vision/tree/main/image%20segmentation(watershed)/plant_segment)).<br />
- ![barGraph_DS](https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/a42cdcf7-0b14-4122-838f-44ceb4eb189e)
+ ![barGraph_DS](https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/60a20f11-8752-46da-bae8-6fce593747dc)
+ ![plant 2-plant-seg](https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/7e91765d-bee0-4afd-8bc5-7d673b380299)
+
+## Watershed for leaf segmentation (GOTO [watershed program link](https://github.com/Afsaneh-Karami/Computer_Vision/blob/main/image%20segmentation(watershed)/watershed.mg)) <br />
+ After a literature review for the best way to segment occluded objects, a combination of morphology operations and the watershed algorithm was chosen. The watershed algorithm has been used extensively in medical image segmentation because it works well in detecting object boundaries and separating connected objects.  <br />
+ The watershed method is a region segmentation algorithm. It segments images based on watershed lines. The input image uses as a morphological map, and the pixel value shows the height of that pixel (elevations) in morphological maps. So, the image shapes a geomorphology region with mountains (high value) and low-lying areas like valleys (low value). If this topological map is going to fill with water, the water flow from the high-value region like a mountain to valleys and form lakes which in the image are called catchment basins. As the lakes (catchment basins) will fill with water, water may spill into nearby catchments. So, the algorithm creates a dam at the junction of each catchment basin to avoid it, called watershed lines. The watershed’s advantage can be fine-grained segmentation, especially in areas where objects are touching or overlapping. On the other hand, the most significantt disadvantage of the watershed algorithm is over-segmentation, dividing the image into excessive regions when there are multiple local minimums (basins).
  
-
-* creating a topological map (GOTO [map folder link](https://github.com/Afsaneh-Karami/my_package/blob/main/maps/foo3.tmap2)) <br />
-  <p align="center">
-<img width="673" alt="Screenshot 2023-02-09 000653" src="https://user-images.githubusercontent.com/78735911/217680260-6198e930-0851-47d0-84a0-98a37d447362.png">
-
-</p><br/>
-
-* move-based (GOTO [config folder link](https://github.com/Afsaneh-Karami/my_package/tree/main/config)) <br />
-<p align="justify">
-
-
-## Image processing with OpenCV (GOTO [src folder link](https://github.com/Afsaneh-Karami/my_package/tree/main/src)) <br />
-
-
- </p>
-<p align="center">
-<img width="736" alt="Screenshot 2023-02-09 000417" src="https://user-images.githubusercontent.com/78735911/217679954-cecb64ee-2504-4483-be19-72e8a80b03e4.png">
-  </p></p><br/>
-  
-2. avoid double counting <br/>
-<p align="justify">
-
-  </p>
-<p align="center">
-<img width="335" alt="Screenshot 2023-02-09 000224" src="https://user-images.githubusercontent.com/78735911/217679542-7c36ed54-5b7a-497f-88c7-aec499e8d338.png">
-</p><br/>
-<p align="justify">
-In a real-world case, adding unique features to avoid double counting, like shape, the number of grapes, and the average
-colour in the contour pixel, improve the accuracy of counting. Also, the ground is not flat and increases the noise in
-coordinate transforming. The slippage of wheels should be considered too.
-## Evaluation:
-To evaluate the effect of each filter in avoiding double counting, some tests were done, and at each step, ignoring one of filtering. According to the result of table 1, contributions to avoiding double counting for area, frame, and tolerance filtration are 47.5, 62, and 47 percent respectively. The performance of the code was checked when the robot passed through a row twice. The result was presented in table 2, and it had 20-23 percent double counting.<br/>
-</p>
-<p align="center">
-<img width="265" alt="Screenshot 2023-02-08 233926" src="https://user-images.githubusercontent.com/78735911/217676550-8eea1e2c-4be0-4c33-a805-58ef7ad93a13.png"><br/> 
-</p>
+ * Methodology and result:<br />
+  The steps for applying the watershed algorithm were as follows. <br />
+1. binarise RGB image by Otsu’s method: Otsu’s method was selected for choosing a threshold to binarise images. Otsu’s is a thresholding technique that separates an image into foreground and background pixels based on a threshold that maximises inter-class variance. It first uses a histogram for the distribution of pixel intensities in the grey image and calculates the probability of occurrence of each intensity value. Then iterate over all thresholds to find the maximum inter-class variance (two-class plant and background).<br />
+ 2. Morphological operation: As the size of small leaves is a limitation in morphological operation, two functions imopen (erosion followed by dilation) and imerode (erosion), were applied consequently to separate leaves a little and eliminate stems (they caused over-segmentation in the watershed). For imopen function, the structural element is a disk shape with a radius of 3; for imerode it is a disk with a radius of 1. They are obtained based on trial and error by considering small leaves. The images of the plant have a lot of occluded leaves with such a variant size, small to big leaves, so if the morphological operation is used to separate them completely, the small leaves will be eliminated.<br />
+ 3. pre-processing operation to enhance the quality of the image as an input to the watershed: Sharpen the leaves’ edges with canny: After the morphological operation to enhance the edge quality of the image, canny was added to the image to prominent boundaries (pre-processing stage). So, adding canny to the image solved some of the over-segmentation caused by poor boundaries. Remove noise from the image: Adding bwareaopen function to remove some noise in the background and removes any connected area with pixels number lower than 20. The value of 20 was selected with trial and error by considering the size of the small leaves. <br />
+4. Create a distance transformation for use as a morphological map in the watershed: To avoid over-segmentation, I applied two methods, marker and distance transformation; the second one worked better. A marker can add to the image to indicate regions of interest that initiate the flooding process. It is so practical for images that objects are occluded. In this case, the marker performance was not good because adding a marker to each leaf automatically requires a huge operation and loss of small leaves. This method is more practical when the size of objects is almost the same. The function bwdist was used to create distance transformation. This function calculates the distance between each pixel and the nearest non-zero pixel in the image. There are three methods for calculation, including cityblock, chessboard, euclidean, and quasi-euclidean. The best result was compatible with quasi euclidean, and the formula of it mentioned blow. <br />
+ d = p (x2 − x1) 2 + (y2 − y1) 2+min(|x2−x1|, |y2−y1|)·( √ 2−1) <br />
+ In fact, by this matrix that shows the distance between each cell and the nearest non-zero pixel, which means the background, the pixel around the centre of each leave has the highest value. Multiplying this matrix with -1 can be a perfect morphological map for the watershed. The centre of the leave has a high negative value (lowest value) and is considered basins, and near the leaves’ edges have a less negative value and are considered good places for dams. The problem is that distance from the background may create several incorrect basins in long, narrow places and lead to over-segmentation. So, to compensate for this, one operation was added after the watershed algorithm. <br />
+5. watershed algorithm: watershed function applied on the output of stage 4 with considering eight connections. The connection in the watershed algorithm is used in merging adjacent regions if they share a common boundary. Therefore, choosing an appropriate value for the ”connection” parameter is crucial for achieving accurate segmentation results. <br />
+6. Apply bwareaopen function again to eliminate some small over-segmentation of the watershed with a pixel size lower than 20.<br /> 
+7. Using bwconncomp function to find the connected components within the binary image (stage 6) <br />
+8. Using function labelmatrix to create a label matrix from the structure of a connected component generated by the bwconncomp function <br />
+9. Using label2rgb to create a colour image from a label matrix. <br />
+ the result of the segmentation algorithm is presented in follwing picture. For most images, it detected leaves correctly, just for plants 3, 8, and 16, one undercounting and for plants 5 and 13 one overcounting. The average difference between the real number of leaves and counted by code is 0.3125. The result of leaf segmentation is in the leaf_segmentation folder (GOTO [floder](https://github.com/Afsaneh-Karami/Computer_Vision/tree/main/image%20segmentation(watershed)/leaf_segmentation)).<br />
+![barGraph-numberleaves](https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/78021658-4aa7-40d2-89d7-fa22100ceeba)
+![plant002_leafseg](https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/cd99294f-5ee5-42ae-9f11-ec5e4625dfba)
 
