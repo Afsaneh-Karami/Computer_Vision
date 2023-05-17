@@ -144,7 +144,7 @@ validation gate. <br/>
 Figures show the real, observed
 and noisy data for constant speed motion in directions x and
 constant acceleration y for two condition validation gates 15
-mm and without validation gate.
+mm and without validation gate. <br/>
 <img width="500" alt="s8" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/c380437d-b464-45a4-ba7b-bbe90db4c97d"> <br/>
 <img width="500" alt="s9" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/429fd4a4-04b7-4ec8-a06b-1ead82307bb5">
 <img width="500" alt="s10" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/88d34e1b-df36-40e8-a9d3-1e842c4f63a3">
