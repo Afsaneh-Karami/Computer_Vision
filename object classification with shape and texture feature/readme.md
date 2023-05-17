@@ -74,8 +74,8 @@ classification, feature analysis was done.
 All the features were extracted and averaged for each image,
 so there are 5 shape features and 12 texture features for
 each image for each object. Features of images 19 and 20
-for both classes were separated as test data. The function
-fitcsvm was used for the classification. It is a machine learning
+for both classes were separated as test data. <br />
+The function fitcsvm was used for the classification. It is a machine learning
 algorithm, the Support Vector Machine (SVM) algorithm,
 for classification. SVM is a machine learning algorithm that finds the optimal boundary (hyperplane) to separate the two
 classes in the feature space. This hyperplane is selected
@@ -86,18 +86,26 @@ output of the prediction of SVM is the discriminant score,
 which represents the SVM model confidence in classification.
 The value of the score is the distance from the observation
 to the decision boundary, and the sign indicates whether
-the observation belongs to this class or not. Four different
-combinations of features were trained and tested on data,
+the observation belongs to this class or not. <br />
+Four different combinations of features were trained and tested on data,
 including the first 5 feature shapes, the second 12 texture
 features, the third combination of all 17 features, and the
-fourth combination of the 10 best features. Two algorithms
-were used to analyse features (to find the best 10 features).
+fourth combination of the 10 best features. <br />
+Two algorithms were used to analyse features (to find the best 10 features).
 The beta coefficient of fitcsvm model indicates weight features
 and shows the importance of each feature in the classification
 model. The enormous value means that features are more
-critical in the classification process. The second model for
-feature analysis was Feature Selection and Classification using
+critical in the classification process. <br />
+The second model for feature analysis was Feature Selection and Classification using
 Nonlinear Component Analysis (fscnca function in Matlab).
 It is a linear Support Vector Machine (SVM). The reason for
 using two algorithms is that one can not give 10 best features.
-
+The discriminant score was used to compare four models. Table below shows the discriminant
+score result for the four mentioned models with fitcsvm
+function. The model with the texture feature had the highest
+score for weed. Combining 10 best features gave a little better
+result than all combinations. 
+![10bestcsvm](https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/65e18514-287f-4efe-a3ff-d5fd79c4bd45)<br />
+feature analysis based on fitcsvm function<br />
+![10bestfscm](https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/db9c94c4-4b76-419c-96c4-a5d110944f6a)<br />
+feature analysis based on fscnca function<br />
