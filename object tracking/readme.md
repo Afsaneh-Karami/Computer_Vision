@@ -56,7 +56,7 @@ H for the Kalman filter is the matrix of the observation model, and for the exte
 input:xp, Pp, H, R ( matrix of the observation noise), z (observation vector of the sensor),h (maps the state variables of the system to the observation model) <br/>
 output: xe, Pe <br/>
 
-##  methodology and result: <br/>
+##  methodology: <br/>
 For this task two method was applied, including: <br/>
 1- Extended Kalman filter for constant speed movement for
 both x and y coordinate axis <br/>
@@ -85,4 +85,33 @@ Some matrixes were used in the Kalman filter and extended Kalman filter with con
 Some matrixes were used in extended Kalman filters with the constant velocity in the x direction and constant acceleration in the y direction.
 <img width="500" alt="s" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/31489110-3070-4c5b-b35e-3256902b0c0d">
 <img width="500" alt="s1" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/c4497b94-ad53-499a-932d-bee053c0fef2">
+
+*  validation gate
+In object tracking, a validation gate is used to ensure that
+the updated state in the observation model is correct. So, put
+the area around the current state (the possible distance the
+object can reach indicate the boundary of this area) and accept
+the updated state in this area. In this way, avoid incorrect
+sensor detection, which can be because of a segmentation
+algorithm or similar objects near each other. In object tracking,
+the validation gate acts like a filter that rejects any object
+detections outside the gate and, if it happens, puts the previous
+estimation for it. The advantage of using a validation gate
+is that it reduces the tracking error, gives more accurate
+results, and avoids drift or false tracks. Choosing the proper
+validation gate needs attention; small values lead to track loss
+or fragmentation because they reject valid object detections.
+A big value allows false tracks or confusion.
+The Mahalanobis distance for observation i and target j were
+used to calculate the validation gate based on the bellow
+formula.
+<img width="500" alt="s2" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/250e8f41-ea20-4257-bdff-2c6473785442">
+##  result: <br/>
+For comparing the result of each method, errors of noisy
+data and real value and the error of estimated data and real
+value were calculated. The formula used for error is mentioned
+in the following. The Table showed the error result
+for noisy data.
+<img width="500" alt="s3" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/81c75623-ae73-4461-ab2b-cedaaf5b37ca">
+<img width="500" alt="s4" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/61f31061-95ae-4196-8cf3-b27904e11776">
 
