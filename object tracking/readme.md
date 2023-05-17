@@ -41,11 +41,14 @@ matrix of the motion model and the Jacobian matrix of the
 observation model, respectively.
 *  Formula for Kalman filter and extended Kalman filter:
 *   Prediction function:
+<div align="center">
 <img width="400" alt="Screenshot 2023-05-17 212026" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/62ebd946-2894-4dbb-b510-01e4fd847562">
+</div>
 For Kalman filter:
 F = matrixof themotionmodel
 For extended Kalman filter, it is the Jacobian matrix of the
 motion model with respect to the state variables
-<img width="296" alt="Screenshot 2023-05-17 184524" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/dc2c71d0-b804-45a1-8530-8b4a2cd61e62">
-
+<div align="center">
+<img width="400" alt="Screenshot 2023-05-17 184524" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/dc2c71d0-b804-45a1-8530-8b4a2cd61e62">
+</div>
 
