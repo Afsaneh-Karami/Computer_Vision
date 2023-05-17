@@ -59,10 +59,10 @@ output: xe, Pe <br/>
 ##  methodology: <br/>
 For this task two method was applied, including: <br/>
 1- Extended Kalman filter for constant speed movement for
-both x and y coordinate axis <br/>
+both x and y coordinate axis (GOTO [folder](https://github.com/Afsaneh-Karami/Computer_Vision/tree/main/object%20tracking/extended_kalmanfilter_constant%20speed))<br/>
 2- Extended Kalman filter with constant speed movement for
 x coordinate axis and constant acceleration movement for y
-coordinate axis <br/>
+coordinate axis (GOTO [folder](https://github.com/Afsaneh-Karami/Computer_Vision/tree/main/object%20tracking/extended_kalmanfilter_constant%20acceleration))<br/>
 The first method, an extended Kalman filter, the motion
 model considered constant velocity. For the second method,
 the x and y data were plotted based on the time (dt=0.2), as
@@ -140,6 +140,7 @@ validation gate. <br/>
 <img width="500" alt="s5" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/b74402a5-4fdb-465c-a582-b606a95ce3ef"> <br/>
 <img width="500" alt="s6" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/f46498f9-62b9-410b-848b-e33117fe59e2">
 <img width="500" alt="s7" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/a8e26708-9bb2-4ae8-8019-123863c8de09">
+
 * second method:
 Figures show the real, observed
 and noisy data for constant speed motion in directions x and
