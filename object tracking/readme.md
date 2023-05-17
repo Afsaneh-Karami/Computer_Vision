@@ -77,3 +77,9 @@ applied in the initial state matrix. <br/>
 y = −2t^2 + 6.9t + 6 <br/>
 ![x-t Graph](https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/55384ca7-f27a-42f5-a731-72f9ae7ff74f)
 ![y-t Graph](https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/b49bed3c-09c4-43f8-84bc-6e980bec0aee)
+
+Some matrixes were used in the Kalman filter and extended Kalman filter with constant velocity motion for both the x and the y direction. <br/>
+<img width="500" alt="Screenshot 2023-05-17 214615" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/5a4647e7-9a29-4703-a7a5-3253428ea6bf">
+<img width="500" alt="a" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/676ac5ad-e785-4de6-9e29-fc230f4f22f2">
+
+Some matrixes were used in extended Kalman filters with the constant velocity in the x direction and constant acceleration in the y direction.
