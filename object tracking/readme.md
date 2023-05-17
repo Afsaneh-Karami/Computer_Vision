@@ -47,12 +47,33 @@ observation model, respectively.
 For Kalman filter F is matrixof themotionmodel. For extended Kalman filter, it is the Jacobian matrix of the motion model with respect to the state variables.<br/>
 input:x (initial state), P (initial state covariance which is equal to Q), F, Q (matrix of the motion noise) <br/>
 output:xp and Pp <br/>
-*  Update function:
 
+*  Update function:
 <div align="center">
 <img width="400" alt="Screenshot 2023-05-17 184524" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/dc2c71d0-b804-45a1-8530-8b4a2cd61e62">
 </div>
 H for the Kalman filter is the matrix of the observation model, and for the extended version is the Jacobian matrix of the observation model for the state variables.
 input:xp, Pp, H, R ( matrix of the observation noise), z (observation vector of the sensor),h (maps the state variables of the system to the observation model) <br/>
 output: xe, Pe <br/>
+
 ##  methodology and result: <br/>
+For this task two method was applied, including: <br/>
+1- Extended Kalman filter for constant speed movement for
+both x and y coordinate axis <br/>
+2- Extended Kalman filter with constant speed movement for
+x coordinate axis and constant acceleration movement for y
+coordinate axis <br/>
+The first method, an extended Kalman filter, the motion
+model considered constant velocity. For the second method,
+the x and y data were plotted based on the time (dt=0.2), as
+shown in the following. For plot x-t, it was so near a linear motion, but for y, it was
+near a quadratic function, which means a constant acceleration
+motion model. The function of movement (motion model) for
+the y direction was created by the poly fit function in Matlab
+(quadratic function). The formula was presented below and
+depicted in following figure. Based on this function, acceleration is
+-4, the initial velocity is 6.9, and the initial y is 6, which were
+applied in the initial state matrix. <br/>
+y = −2t^2 + 6.9t + 6 <br/>
+![x-t Graph](https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/55384ca7-f27a-42f5-a731-72f9ae7ff74f)
+![y-t Graph](https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/b49bed3c-09c4-43f8-84bc-6e980bec0aee)
