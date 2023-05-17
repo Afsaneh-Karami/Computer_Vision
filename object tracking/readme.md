@@ -106,12 +106,13 @@ The Mahalanobis distance for observation i and target j were
 used to calculate the validation gate based on the bellow
 formula.
 <img width="500" alt="s2" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/250e8f41-ea20-4257-bdff-2c6473785442">
+
 ##  result: <br/>
 For comparing the result of each method, errors of noisy
 data and real value and the error of estimated data and real
 value were calculated. The formula used for error is mentioned
 in the following. The Table showed the error result
 for noisy data.
-<img width="500" alt="s3" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/81c75623-ae73-4461-ab2b-cedaaf5b37ca">
-<img width="500" alt="s4" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/61f31061-95ae-4196-8cf3-b27904e11776">
+<img width="500" alt="s3" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/81c75623-ae73-4461-ab2b-cedaaf5b37ca"><br/>
+<img width="500" alt="s4" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/61f31061-95ae-4196-8cf3-b27904e11776"><br/>
 
