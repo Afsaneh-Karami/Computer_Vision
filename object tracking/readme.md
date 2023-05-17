@@ -105,14 +105,46 @@ A big value allows false tracks or confusion.
 The Mahalanobis distance for observation i and target j were
 used to calculate the validation gate based on the bellow
 formula.
+<div align="center">
 <img width="500" alt="s2" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/250e8f41-ea20-4257-bdff-2c6473785442">
-
+</div>
 ##  result: <br/>
 For comparing the result of each method, errors of noisy
 data and real value and the error of estimated data and real
 value were calculated. The formula used for error is mentioned
 in the following. The Table showed the error result
 for noisy data.
+<div align="center">
 <img width="500" alt="s3" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/81c75623-ae73-4461-ab2b-cedaaf5b37ca"><br/>
 <img width="500" alt="s4" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/61f31061-95ae-4196-8cf3-b27904e11776"><br/>
+</div>
 
+Different validation gates were applied, and the best one
+with the lowest error was chosen for each method which was
+65 for the constant speed motion model in two directions, x
+and y, 15 for constant speed in the x direction and constant
+acceleration in the y direction. The plots of the validation gate
+regarding error are shown in below.After
+applying the validation gate, each method’s error decreased
+compared to when no validation gate was implemented because unrelated states that happened by the error in
+sensor detection decreased. As it is clear in the following Tabel when
+the motion model of y-direction changed from constant speed
+to constant acceleration, which better matched with data, the
+error of estimated state decreased, and the lowest error was for
+method second.
+* first method:
+Figures show the real, observed
+and noisy data for constant speed motion in both directions x
+and y in two condition validation gates 65 mm and without
+validation gate. <br/>
+<img width="500" alt="s5" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/b74402a5-4fdb-465c-a582-b606a95ce3ef">
+<img width="500" alt="s6" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/f46498f9-62b9-410b-848b-e33117fe59e2">
+<img width="500" alt="s7" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/a8e26708-9bb2-4ae8-8019-123863c8de09">
+* second method:
+Figures show the real, observed
+and noisy data for constant speed motion in directions x and
+constant acceleration y for two condition validation gates 15
+mm and without validation gate.
+<img width="500" alt="s8" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/c380437d-b464-45a4-ba7b-bbe90db4c97d">
+<img width="500" alt="s9" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/429fd4a4-04b7-4ec8-a06b-1ead82307bb5">
+<img width="500" alt="s10" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/88d34e1b-df36-40e8-a9d3-1e842c4f63a3">
