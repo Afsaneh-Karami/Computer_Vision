@@ -104,8 +104,10 @@ The discriminant score was used to compare four models. Table below shows the di
 score result for the four mentioned models with fitcsvm
 function. The model with the texture feature had the highest
 score for weed. Combining 10 best features gave a little better
-result than all combinations. 
+result than all combinations. <br />
+* feature analysis based on fitcsvm function<br />
 ![10bestcsvm](https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/65e18514-287f-4efe-a3ff-d5fd79c4bd45)<br />
-feature analysis based on fitcsvm function<br />
+* feature analysis based on fscnca function<br />
 ![10bestfscm](https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/db9c94c4-4b76-419c-96c4-a5d110944f6a)<br />
-feature analysis based on fscnca function<br />
+<img width="377" alt="Screenshot 2023-05-17 184538" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/87766bbf-7121-4015-bfc7-04f261332ea3">
+
