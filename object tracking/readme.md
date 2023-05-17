@@ -137,7 +137,7 @@ Figures show the real, observed
 and noisy data for constant speed motion in both directions x
 and y in two condition validation gates 65 mm and without
 validation gate. <br/>
-<img width="500" alt="s5" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/b74402a5-4fdb-465c-a582-b606a95ce3ef">
+<img width="500" alt="s5" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/b74402a5-4fdb-465c-a582-b606a95ce3ef"> <br/>
 <img width="500" alt="s6" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/f46498f9-62b9-410b-848b-e33117fe59e2">
 <img width="500" alt="s7" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/a8e26708-9bb2-4ae8-8019-123863c8de09">
 * second method:
@@ -145,6 +145,6 @@ Figures show the real, observed
 and noisy data for constant speed motion in directions x and
 constant acceleration y for two condition validation gates 15
 mm and without validation gate.
-<img width="500" alt="s8" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/c380437d-b464-45a4-ba7b-bbe90db4c97d">
+<img width="500" alt="s8" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/c380437d-b464-45a4-ba7b-bbe90db4c97d"> <br/>
 <img width="500" alt="s9" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/429fd4a4-04b7-4ec8-a06b-1ead82307bb5">
 <img width="500" alt="s10" src="https://github.com/Afsaneh-Karami/Computer_Vision/assets/78735911/88d34e1b-df36-40e8-a9d3-1e842c4f63a3">
